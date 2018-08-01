@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_avata_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/user" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="3"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_taianh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/wrap_box"
+            android:text="Tải ảnh" />
+
+        <EditText
+            android:id="@+id/edt_them_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/wrap_box_edt"
+            android:hint="@string/hint_txt_user" />
+
+        <EditText
+            android:id="@+id/edt_them_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/wrap_box_edt"
+            android:hint="@string/hint_txt_pass" />
+
+        <EditText
+            android:id="@+id/edt_them_fullname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/wrap_box_edt"
+            android:hint="@string/hint_txt_fullname" />
+
+        <EditText
+            android:id="@+id/edt_them_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/wrap_box_edt"
+            android:hint="@string/hint_txt_address" />
+
+        <EditText
+            android:id="@+id/edt_them_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/wrap_box_edt"
+            android:hint="@string/hint_txt_email" />
+
+        <EditText
+            android:id="@+id/edt_them_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/wrap_box_edt"
+            android:hint="@string/hint_txt_phone" />
+
+        <Button
+            android:id="@+id/btn_tao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/holo_orange_dark"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="Tạo" />
+    </LinearLayout>
+
+</LinearLayout>

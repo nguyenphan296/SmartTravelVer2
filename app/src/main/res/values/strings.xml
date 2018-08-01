@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">SmartTravelVer2</string>
     <string name="map_api_key">AIzaSyCe2GIg98EnWX1Os4bFNwwQ8sZp32lA7Ew</string>
+    <string name="hint_txt_user">Username</string>
+    <string name="hint_txt_pass">Password</string>
+    <string name="hint_txt_fullname">FullName</string>
+    <string name="hint_txt_address">Address</string>
+    <string name="hint_txt_email">Email</string>
+    <string name="hint_txt_phone">Phone</string>
+
+    <string name="btn_dangnhap">Đăng nhập</string>
 </resources>
