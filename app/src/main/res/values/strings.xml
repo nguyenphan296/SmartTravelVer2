@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SmartTravelVer2</string>
+    <string name="map_api_key">AIzaSyCe2GIg98EnWX1Os4bFNwwQ8sZp32lA7Ew</string>
 </resources>
