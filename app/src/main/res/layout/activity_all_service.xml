@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.ActivityAllService">
+
+    <!--<android.support.v7.widget.Toolbar-->
+        <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--android:id="@+id/toolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="#2196F3"-->
+        <!--android:minHeight="?attr/actionBarSize" >-->
+    <!--</android.support.v7.widget.Toolbar>-->
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:background="@android:color/darker_gray"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:id="@+id/txtTour"
+            android:padding="2dp"
+            android:background="@android:color/white"
+            android:layout_marginRight="1dp"
+            android:textSize="12sp"
+            android:textColor="@android:color/black"
+            android:maxLines="2"
+            android:layout_weight="1"
+            android:text="Tour"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/txtKhachSan"
+            android:padding="2dp"
+            android:background="@android:color/white"
+            android:layout_marginRight="1dp"
+            android:textSize="12sp"
+            android:textColor="@android:color/black"
+            android:maxLines="2"
+            android:layout_weight="1"
+            android:text="Khách sạn"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/txtNhaHang"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:maxLines="2"
+            android:padding="2dp"
+            android:text="Nhà hàng"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/txtTaxi"
+            android:padding="2dp"
+            android:background="@android:color/white"
+            android:layout_marginRight="1dp"
+            android:textSize="12sp"
+            android:textColor="@android:color/black"
+            android:maxLines="2"
+            android:layout_weight="1"
+            android:text="Taxi"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+    <View
+        android:background="@android:color/darker_gray"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <FrameLayout
+        android:background="@android:color/white"
+        android:id="@+id/frame_all_service"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+
+
+
+
+
+</LinearLayout>
