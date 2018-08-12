@@ -18,17 +18,17 @@
             android:value="@string/map_api_key" />
 
         <activity android:name=".Activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".Activity.DangKyActivity" />
         <activity android:name=".Activity.DangNhapActivity" />
         <activity android:name=".Activity.ActivityAllService" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
     </activity>
         <activity android:name=".Activity.ThemKhachSanActivity" />
         <activity android:name=".Activity.ThemTourActivity" />
