@@ -80,7 +80,6 @@ public class Tour_Model {
             values.put(COLUMN_TourThoiGian, objT.getThoiGian());
             values.put(COLUMN_TourGia, objT.getGia());
             values.put(COLUMN_TourImage, objT.getImage());
-            values.put(COLUMN_TourMaDiaDiem, objT.getMaDiaDiem());
 
             //Insert new recored
             db.insert(Tours, null, values);

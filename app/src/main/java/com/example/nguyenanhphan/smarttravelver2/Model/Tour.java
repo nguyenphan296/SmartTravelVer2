@@ -35,6 +35,14 @@ public class Tour implements Serializable {
         this.thoiGian = thoiGian;
     }
 
+    public Tour(String tenCongTy, String diemDen, int gia, String image, String thoiGian) {
+        this.tenCongTy = tenCongTy;
+        this.diemDen = diemDen;
+        this.gia = gia;
+        this.image = image;
+        this.thoiGian = thoiGian;
+    }
+
     public String getThoiGian() {
         return thoiGian;
     }

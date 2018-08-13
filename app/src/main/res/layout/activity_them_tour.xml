@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="4"
-    tools:context=".Activity.ThemKhachSanActivity">
+    tools:context=".Activity.ThemTourActivity">
     <!--<android.support.v7.widget.Toolbar-->
         <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
         <!--android:id="@+id/toolbarThemTour"-->
@@ -73,13 +73,14 @@
 
 
         <Button
-            android:id="@+id/btnThemTour"
+            android:id="@+id/btnThemTour2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
             android:layout_marginTop="5dp"
             android:text="Tạo"
+            android:onClick="addTour"
             android:textAllCaps="false"
             android:layout_gravity="center"/>
     </LinearLayout>

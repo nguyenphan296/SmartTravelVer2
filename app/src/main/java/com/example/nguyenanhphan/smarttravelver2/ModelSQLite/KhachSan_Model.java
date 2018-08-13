@@ -76,7 +76,7 @@ public class KhachSan_Model {
     public KhachSan getElementById(KhachSan objT) {
         return null;
     }
-    public boolean InsertElement(KhachSan objT) {
+    public boolean InsertElementKhachSan(KhachSan objT) {
         try {
             SQLiteDatabase db = mdb.getWritableDatabase();
             ContentValues values = new ContentValues();
@@ -90,7 +90,6 @@ public class KhachSan_Model {
             values.put(COLUMN_KhachSanLatitude, objT.getLatitude());
             values.put(COLUMN_KhachSanImage, objT.getImageKs());
             values.put(COLUMN_KhachSanSoPhongTrong, objT.getSoPhongTrong());
-            values.put(COLUMN_KhachSanMaDiaDiem, objT.getMaDiaDiem());
 
             //Insert new recored
             db.insert(KhachSans, null, values);

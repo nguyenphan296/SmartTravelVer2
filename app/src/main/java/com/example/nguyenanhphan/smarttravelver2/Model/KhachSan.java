@@ -41,6 +41,17 @@ public class KhachSan implements Serializable {
         this.maDiaDiem = maDiaDiem;
     }
 
+    public KhachSan(String tenKhachSan, int giaPhong, String diaChi, int hotline, String longitude, String latitude, String imageKs, int soPhongTrong) {
+        this.tenKhachSan = tenKhachSan;
+        this.giaPhong = giaPhong;
+        this.diaChi = diaChi;
+        this.hotline = hotline;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.imageKs = imageKs;
+        this.soPhongTrong = soPhongTrong;
+    }
+
     public int getMaKhachSan() {
         return maKhachSan;
     }
