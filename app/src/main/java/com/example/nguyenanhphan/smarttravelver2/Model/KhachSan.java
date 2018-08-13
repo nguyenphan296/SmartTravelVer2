@@ -26,6 +26,7 @@ public class KhachSan implements Serializable {
     private int maDiaDiem;
 
     public KhachSan() {
+
     }
 
     public KhachSan(int maKhachSan, String tenKhachSan, int giaPhong, String diaChi, int hotline, String longitude, String latitude, String imageKs, int soPhongTrong, int maDiaDiem) {

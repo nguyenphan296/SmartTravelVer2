@@ -5,7 +5,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.nguyenanhphan.smarttravelver2.Model.KhachSan;
-import com.example.nguyenanhphan.smarttravelver2.Model.Tour;
 import com.example.nguyenanhphan.smarttravelver2.SQLite.DataBaseHandler;
 
 import java.util.ArrayList;
@@ -20,14 +19,7 @@ import static com.example.nguyenanhphan.smarttravelver2.SQLite.DbScript.COLUMN_K
 import static com.example.nguyenanhphan.smarttravelver2.SQLite.DbScript.COLUMN_KhachSanMaDiaDiem;
 import static com.example.nguyenanhphan.smarttravelver2.SQLite.DbScript.COLUMN_KhachSanName;
 import static com.example.nguyenanhphan.smarttravelver2.SQLite.DbScript.COLUMN_KhachSanSoPhongTrong;
-import static com.example.nguyenanhphan.smarttravelver2.SQLite.DbScript.COLUMN_TourGia;
-import static com.example.nguyenanhphan.smarttravelver2.SQLite.DbScript.COLUMN_TourImage;
-import static com.example.nguyenanhphan.smarttravelver2.SQLite.DbScript.COLUMN_TourMaDiaDiem;
-import static com.example.nguyenanhphan.smarttravelver2.SQLite.DbScript.COLUMN_TourMoTa;
-import static com.example.nguyenanhphan.smarttravelver2.SQLite.DbScript.COLUMN_TourTenCongTy;
-import static com.example.nguyenanhphan.smarttravelver2.SQLite.DbScript.COLUMN_TourThoiGian;
 import static com.example.nguyenanhphan.smarttravelver2.SQLite.DbScript.KhachSans;
-import static com.example.nguyenanhphan.smarttravelver2.SQLite.DbScript.Tours;
 
 /**
  * @author Nguyễn Đức Cảnh
@@ -50,21 +42,21 @@ public class KhachSan_Model {
     public List<KhachSan> getAllElements() {
         List<KhachSan> listKhachSanDetail = new ArrayList<KhachSan>();
         KhachSan objKhachSan = new KhachSan();
-        String query = "SELECT  * FROM tbl_KhachSan";
+        String query = "SELECT  *  FROM "+KhachSans;
         SQLiteDatabase db = mdb.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
         if (cursor.moveToFirst()) {
             do {
-                objKhachSan.setMaKhachSan(Integer.parseInt(cursor.getColumnName(0)));
-                objKhachSan.setTenKhachSan(cursor.getColumnName(1));
-                objKhachSan.setGiaPhong(Integer.parseInt(cursor.getColumnName(2)));
-                objKhachSan.setDiaChi(cursor.getColumnName(3));
-                objKhachSan.setHotline(Integer.parseInt(cursor.getColumnName(4)));
-                objKhachSan.setLongitude(cursor.getColumnName(5));
-                objKhachSan.setLatitude(cursor.getColumnName(6));
-                objKhachSan.setImageKs(cursor.getColumnName(7));
-                objKhachSan.setSoPhongTrong(Integer.parseInt(cursor.getColumnName(8)));
-                objKhachSan.setMaDiaDiem(Integer.parseInt(cursor.getColumnName(9)));
+              // objKhachSan.setMaKhachSan(Integer.parseInt(cursor.getColumnName(0)));
+                objKhachSan.setTenKhachSan(cursor.getString(1));
+                objKhachSan.setGiaPhong(Integer.parseInt(cursor.getString(2)));
+                objKhachSan.setDiaChi(cursor.getString(3));
+                objKhachSan.setHotline(Integer.parseInt(cursor.getString(4)));
+                objKhachSan.setLongitude(cursor.getString(5));
+                objKhachSan.setLatitude(cursor.getString(6));
+                objKhachSan.setImageKs(cursor.getString(7));
+                objKhachSan.setSoPhongTrong(Integer.parseInt(cursor.getString(8)));
+                objKhachSan.setMaDiaDiem(Integer.parseInt(cursor.getString(9)));
 
                 listKhachSanDetail.add(objKhachSan);
             } while (cursor.moveToNext());
@@ -81,7 +73,6 @@ public class KhachSan_Model {
             SQLiteDatabase db = mdb.getWritableDatabase();
             ContentValues values = new ContentValues();
 
-            // values.put(COLUMN_VoteDetailID, objT.getVoteDetailId());
             values.put(COLUMN_KhachSanName, objT.getTenKhachSan());
             values.put(COLUMN_KhachSanGiaPhong, objT.getGiaPhong());
             values.put(COLUMN_KhachSanDiaChi, objT.getDiaChi());
@@ -90,7 +81,7 @@ public class KhachSan_Model {
             values.put(COLUMN_KhachSanLatitude, objT.getLatitude());
             values.put(COLUMN_KhachSanImage, objT.getImageKs());
             values.put(COLUMN_KhachSanSoPhongTrong, objT.getSoPhongTrong());
-
+            values.put(COLUMN_KhachSanMaDiaDiem,1);
             //Insert new recored
             db.insert(KhachSans, null, values);
             db.close();

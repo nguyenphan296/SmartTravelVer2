@@ -1,18 +1,12 @@
 package com.example.nguyenanhphan.smarttravelver2.Adapter;
 
-import android.app.Activity;
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.nguyenanhphan.smarttravelver2.Common.ItemClickListener;
 import com.example.nguyenanhphan.smarttravelver2.Model.KhachSan;
 import com.example.nguyenanhphan.smarttravelver2.R;
 
@@ -60,9 +54,9 @@ public class AdapterKhachSan extends BaseAdapter{
         TextView tvTenKhachSan = view.findViewById(R.id.txtTenKhachSan);
         TextView tvGiaPhong = view.findViewById(R.id.txtGiaPhong);
 
-        img.setImageResource(Integer.parseInt(khachSanList.get(position).getImageKs()));
+       // img.setImageResource(Integer.parseInt(khachSanList.get(position).getImageKs()));
         tvTenKhachSan.setText(khachSanList.get(position).getTenKhachSan());
-        tvGiaPhong.setText(khachSanList.get(position).getGiaPhong());
+        tvGiaPhong.setText(""+khachSanList.get(position).getGiaPhong());
         return view;
     }
 
