@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -22,6 +23,7 @@ import com.example.nguyenanhphan.smarttravelver2.ModelSQLite.KhachSan_Model;
 import com.example.nguyenanhphan.smarttravelver2.R;
 import com.example.nguyenanhphan.smarttravelver2.SQLite.DataBaseHandler;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
@@ -99,7 +101,11 @@ public class ThemKhachSanActivity extends AppCompatActivity {
     }
 
     public void addKs(View view){
-        String image = String.valueOf(imgKhachSan.getResources());
+        BitmapDrawable bitmapDrawable = (BitmapDrawable) imgKhachSan.getDrawable();
+        Bitmap bitmap = bitmapDrawable.getBitmap();
+        ByteArrayOutputStream byteArray = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArray);
+        byte[] imgKhachSan = byteArray.toByteArray();
         String tenKhachSan = edTenKhachSan.getText().toString().trim();
         String soPhongTrong = edSoPhongTrong.getText().toString().trim();
         String khoangGia = edKhoangGia.getText().toString().trim();
@@ -151,7 +157,7 @@ public class ThemKhachSanActivity extends AppCompatActivity {
                     .setNegativeButton("Ok", null)
                     .show();
         } else {
-            KhachSan khachSan = new KhachSan(tenKhachSan, Integer.parseInt(khoangGia), diaChi,Integer.parseInt(soDienThoai),longTiTude,laTiTude,image,Integer.parseInt(soPhongTrong));
+            KhachSan khachSan = new KhachSan(tenKhachSan, Integer.parseInt(khoangGia), diaChi,Integer.parseInt(soDienThoai),longTiTude,laTiTude,imgKhachSan,Integer.parseInt(soPhongTrong));
             db.InsertElementKhachSan(khachSan);
             Toast.makeText(this, "Thêm khách sạn thành công!!!", Toast.LENGTH_SHORT).show();
             finish();

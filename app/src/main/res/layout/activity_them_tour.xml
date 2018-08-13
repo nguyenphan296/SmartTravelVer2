@@ -43,7 +43,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/wrap_box_edt"
-            android:hint="Tên công ty cung cấp" />
+            android:hint="Tên công ty cung cấp"
+            android:inputType="textPersonName"/>
 
         <EditText
             android:id="@+id/edMoTaTour"
@@ -51,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/wrap_box_edt"
-            android:hint="Mô tả điểm đến" />
+            android:hint="Mô tả điểm đến"/>
 
         <EditText
             android:id="@+id/edThoiGianTour"
@@ -59,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/wrap_box_edt"
-            android:hint="Thời gian" />
+            android:hint="Thời gian"/>
 
         <EditText
             android:id="@+id/edGiaTour"
@@ -67,7 +68,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/wrap_box_edt"
-            android:hint="Giá" />
+            android:hint="Giá"
+            android:inputType="numberDecimal"/>
 
 
 

@@ -6,7 +6,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import static com.example.nguyenanhphan.smarttravelver2.SQLite.DbScript.CreateTable;
+import static com.example.nguyenanhphan.smarttravelver2.SQLite.DbScript.CreateTableKhachSan;
+import static com.example.nguyenanhphan.smarttravelver2.SQLite.DbScript.CreateTableTour;
 import static com.example.nguyenanhphan.smarttravelver2.SQLite.DbScript.UpdateTable;
+import static com.example.nguyenanhphan.smarttravelver2.SQLite.DbScript.UpdateTableKhachSan;
+import static com.example.nguyenanhphan.smarttravelver2.SQLite.DbScript.UpdateTableTour;
 
 public class DataBaseHandler extends SQLiteOpenHelper {
 
@@ -26,12 +30,16 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         Log.i(TAG, "DataBaseHandler.onCreate ....");
         CreateTable(db);
+        CreateTableKhachSan(db);
+        CreateTableTour(db);
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         UpdateTable(db);
+        UpdateTableTour(db);
+        UpdateTableKhachSan(db);
     }
 
 }

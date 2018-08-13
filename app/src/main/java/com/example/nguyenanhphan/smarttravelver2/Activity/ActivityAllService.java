@@ -31,7 +31,6 @@ public class ActivityAllService extends AppCompatActivity {
     ViewPager viewPager;
     TabLayout tabLayout;
     AdapterPager adapter;
-    Button btnThemKhachSan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,13 +56,9 @@ public class ActivityAllService extends AppCompatActivity {
     private void init() {
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         tabLayout = (TabLayout) findViewById(R.id.tablayout);
-        btnThemKhachSan = findViewById(R.id.btnThemKs);
     }
 
 
 
-    public void ThemKhachSan(View view){
-        Intent i = new Intent(ActivityAllService.this,ThemKhachSanActivity.class);
-        startActivity(i);
-    }
+
 }

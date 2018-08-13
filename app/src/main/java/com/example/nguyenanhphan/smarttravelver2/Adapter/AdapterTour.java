@@ -1,6 +1,8 @@
 package com.example.nguyenanhphan.smarttravelver2.Adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -50,15 +52,17 @@ public class AdapterTour extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = View.inflate(context,R.layout.item_tour,null);
-        ImageView img = view.findViewById(R.id.img_tour);
+        ImageView img = view.findViewById(R.id.img_tour1);
         TextView tvTenCongTy = view.findViewById(R.id.txtTenCongTy);
         TextView tvDiemDen = view.findViewById(R.id.txtDiemDen);
         TextView tvGiaTour = view.findViewById(R.id.txtGiaTour);
 
-        img.setImageResource(Integer.parseInt(tourList.get(position).getImage()));
+        byte[] avatar = tourList.get(position).getImage();
+        Bitmap bitmap = BitmapFactory.decodeByteArray(avatar,0,avatar.length);
+        img.setImageBitmap(bitmap);
         tvTenCongTy.setText(tourList.get(position).getTenCongTy());
         tvDiemDen.setText(tourList.get(position).getDiemDen());
-        tvGiaTour.setText(tourList.get(position).getGia());
+        tvGiaTour.setText(tourList.get(position).getGia()+"");
 
         return view;
     }

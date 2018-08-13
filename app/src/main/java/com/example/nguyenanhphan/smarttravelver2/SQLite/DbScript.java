@@ -53,17 +53,18 @@ public class DbScript {
                 + ")";
         // creating required tables
         db.execSQL(TABLE_PLACE);
+
     }
 
     public static void CreateTableTour(SQLiteDatabase db){
         String TABLE_TOUR="CREATE TABLE "+ Tours + "("
-                + COLUMN_TourID + " INTEGER PRIMARY KEY,"
+                + COLUMN_TourID + " INTEGER PRIMARY KEY AUTOINCREMENT ,"
                 + COLUMN_TourTenCongTy + " TEXT,"
-                + COLUMN_TourMoTa + "TEXT,"
-                + COLUMN_TourThoiGian + "TEXT,"
-                + COLUMN_TourGia + "INTEGER,"
-                + COLUMN_TourImage +"TEXT,"
-                + COLUMN_TourMaDiaDiem + "INTEGER"
+                + COLUMN_TourMoTa + " TEXT,"
+                + COLUMN_TourThoiGian + " TEXT,"
+                + COLUMN_TourGia + " INTEGER,"
+                + COLUMN_TourImage +" BLOB,"
+                + COLUMN_TourMaDiaDiem + " INTEGER"
                 + ")";
 
         db.execSQL(TABLE_TOUR);
@@ -71,16 +72,16 @@ public class DbScript {
 
     public static void CreateTableKhachSan(SQLiteDatabase db){
         String TABLE_KHACHSAN="CREATE TABLE "+ KhachSans + "("
-                + COLUMN_KhachSanID + " INTEGER PRIMARY KEY,"
+                + COLUMN_KhachSanID + " INTEGER PRIMARY KEY AUTOINCREMENT ,"
                 + COLUMN_KhachSanName + " TEXT,"
-                + COLUMN_KhachSanGiaPhong + "INTEGER,"
-                + COLUMN_KhachSanDiaChi + "TEXT,"
-                + COLUMN_KhachSanHotline +"TEXT,"
-                + COLUMN_KhachSanLongtitude + "TEXT,"
-                + COLUMN_KhachSanLatitude + "TEXT,"
-                + COLUMN_KhachSanImage + "TEXT,"
-                + COLUMN_KhachSanSoPhongTrong + "INTEGER,"
-                + COLUMN_KhachSanMaDiaDiem + "INTEGER"
+                + COLUMN_KhachSanGiaPhong + " INTEGER,"
+                + COLUMN_KhachSanDiaChi + " TEXT,"
+                + COLUMN_KhachSanHotline +" INTEGER,"
+                + COLUMN_KhachSanLongtitude + " TEXT,"
+                + COLUMN_KhachSanLatitude + " TEXT,"
+                + COLUMN_KhachSanImage + " BLOB,"
+                + COLUMN_KhachSanSoPhongTrong + " INTEGER,"
+                + COLUMN_KhachSanMaDiaDiem + " INTEGER"
                 + ")";
 
         db.execSQL(TABLE_KHACHSAN);
@@ -98,13 +99,13 @@ public class DbScript {
         db.execSQL("DROP TABLE IF EXISTS " + Tours);
 
         // create new tables
-        CreateTable(db);
+        CreateTableTour(db);
     }
     public static void UpdateTableKhachSan(SQLiteDatabase db) {
         // on upgrade drop older tables
         db.execSQL("DROP TABLE IF EXISTS " + KhachSans);
 
         // create new tables
-        CreateTable(db);
+        CreateTableKhachSan(db);
     }
 }

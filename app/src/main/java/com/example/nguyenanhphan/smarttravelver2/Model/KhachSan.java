@@ -21,14 +21,14 @@ public class KhachSan implements Serializable {
     private int hotline;
     private String longitude;
     private String latitude;
-    private String imageKs;
+    private byte[] imageKs;
     private int soPhongTrong;
     private int maDiaDiem;
 
     public KhachSan() {
     }
 
-    public KhachSan(int maKhachSan, String tenKhachSan, int giaPhong, String diaChi, int hotline, String longitude, String latitude, String imageKs, int soPhongTrong, int maDiaDiem) {
+    public KhachSan(int maKhachSan, String tenKhachSan, int giaPhong, String diaChi, int hotline, String longitude, String latitude, byte[] imageKs, int soPhongTrong, int maDiaDiem) {
         this.maKhachSan = maKhachSan;
         this.tenKhachSan = tenKhachSan;
         this.giaPhong = giaPhong;
@@ -41,7 +41,7 @@ public class KhachSan implements Serializable {
         this.maDiaDiem = maDiaDiem;
     }
 
-    public KhachSan(String tenKhachSan, int giaPhong, String diaChi, int hotline, String longitude, String latitude, String imageKs, int soPhongTrong) {
+    public KhachSan(String tenKhachSan, int giaPhong, String diaChi, int hotline, String longitude, String latitude, byte[] imageKs, int soPhongTrong) {
         this.tenKhachSan = tenKhachSan;
         this.giaPhong = giaPhong;
         this.diaChi = diaChi;
@@ -108,11 +108,11 @@ public class KhachSan implements Serializable {
         this.latitude = latitude;
     }
 
-    public String getImageKs() {
+    public byte[] getImageKs() {
         return imageKs;
     }
 
-    public void setImageKs(String imageKs) {
+    public void setImageKs(byte[] imageKs) {
         this.imageKs = imageKs;
     }
 

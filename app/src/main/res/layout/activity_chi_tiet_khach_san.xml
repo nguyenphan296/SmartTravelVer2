@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:text="Giá phòng: "/>
         <TextView
-            android:id="@+id/txtGiaPhong"
+            android:id="@+id/txtGiaPhong2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>

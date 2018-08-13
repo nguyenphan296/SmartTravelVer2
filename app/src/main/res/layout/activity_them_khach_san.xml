@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/wrap_box_edt"
-            android:hint="Tên" />
+            android:hint="Tên"/>
 
         <EditText
             android:id="@+id/edSoPhongTrong"
@@ -51,7 +51,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:background="@drawable/wrap_box_edt"
-            android:hint="Số phòng trống" />
+            android:hint="Số phòng trống"
+            android:inputType="numberDecimal"/>
 
         <EditText
             android:id="@+id/edKhoangGia"
@@ -59,7 +60,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:background="@drawable/wrap_box_edt"
-            android:hint="Khoảng giá" />
+            android:hint="Khoảng giá"
+            android:inputType="numberDecimal"/>
 
         <EditText
             android:id="@+id/edLongtitude"
@@ -67,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:background="@drawable/wrap_box_edt"
-            android:hint="Longtitude" />
+            android:hint="Longtitude"/>
 
         <EditText
             android:id="@+id/edLatitude"
@@ -75,7 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:background="@drawable/wrap_box_edt"
-            android:hint="Latitude" />
+            android:hint="Latitude"/>
 
         <EditText
             android:id="@+id/edDiaChi"
@@ -83,14 +85,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:background="@drawable/wrap_box_edt"
-            android:hint="Địa chỉ" />
+            android:hint="Địa chỉ"/>
         <EditText
             android:id="@+id/edSoDienThoai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:background="@drawable/wrap_box_edt"
-            android:hint="Số điện thoại" />
+            android:hint="Số điện thoại"
+            android:inputType="numberDecimal"/>
 
 
         <Button

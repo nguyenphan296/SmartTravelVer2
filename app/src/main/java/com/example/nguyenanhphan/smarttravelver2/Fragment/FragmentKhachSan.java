@@ -8,9 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.nguyenanhphan.smarttravelver2.Activity.ActivityAllService;
 import com.example.nguyenanhphan.smarttravelver2.Activity.ChiTietKhachSanActivity;
+import com.example.nguyenanhphan.smarttravelver2.Activity.ThemKhachSanActivity;
 import com.example.nguyenanhphan.smarttravelver2.Adapter.AdapterKhachSan;
 import com.example.nguyenanhphan.smarttravelver2.Model.KhachSan;
 import com.example.nguyenanhphan.smarttravelver2.ModelSQLite.KhachSan_Model;
@@ -41,6 +44,7 @@ public class FragmentKhachSan extends Fragment {
     List<KhachSan> khachSanList;
     DataBaseHandler mdb;
     KhachSan_Model khachSanModel;
+    Button btnThemKhachSan;
 
     @Nullable
     @Override
@@ -63,12 +67,20 @@ public class FragmentKhachSan extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         listView = getActivity().findViewById(R.id.lisKhachSan);
+        btnThemKhachSan=getActivity().findViewById(R.id.btnThemKs);
         init();
+        btnThemKhachSan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    Intent i = new Intent(getActivity(),ThemKhachSanActivity.class);
+                    startActivity(i);
+            }
+        });
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Intent i = new Intent(getContext(), ChiTietKhachSanActivity.class);
-//                startActivity(i);
+                Intent i = new Intent(getActivity(), ChiTietKhachSanActivity.class);
+                startActivity(i);
             }
         });
     }

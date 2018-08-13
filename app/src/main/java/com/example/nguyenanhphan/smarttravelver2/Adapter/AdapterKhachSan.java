@@ -2,6 +2,8 @@ package com.example.nguyenanhphan.smarttravelver2.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -56,13 +58,16 @@ public class AdapterKhachSan extends BaseAdapter{
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = View.inflate(context, R.layout.item_khach_san,null);
-        ImageView img = view.findViewById(R.id.img_khach_san);
+        ImageView img = view.findViewById(R.id.img_khach_san1);
         TextView tvTenKhachSan = view.findViewById(R.id.txtTenKhachSan);
         TextView tvGiaPhong = view.findViewById(R.id.txtGiaPhong);
 
-        img.setImageResource(Integer.parseInt(khachSanList.get(position).getImageKs()));
+        byte[] avatar = khachSanList.get(position).getImageKs();
+        Bitmap bitmap = BitmapFactory.decodeByteArray(avatar,0,avatar.length);
+        img.setImageBitmap(bitmap);
+
         tvTenKhachSan.setText(khachSanList.get(position).getTenKhachSan());
-        tvGiaPhong.setText(khachSanList.get(position).getGiaPhong());
+        tvGiaPhong.setText(khachSanList.get(position).getGiaPhong()+""+" đồng");
         return view;
     }
 

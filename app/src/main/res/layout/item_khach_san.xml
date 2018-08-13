@@ -15,7 +15,7 @@
         android:background="@android:color/white">
 
         <ImageView
-            android:id="@+id/img_khach_san"
+            android:id="@+id/img_khach_san1"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="fitXY"/>
