@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -24,6 +25,7 @@ import com.example.nguyenanhphan.smarttravelver2.ModelSQLite.Tour_Model;
 import com.example.nguyenanhphan.smarttravelver2.R;
 import com.example.nguyenanhphan.smarttravelver2.SQLite.DataBaseHandler;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
@@ -90,7 +92,11 @@ public class ThemTourActivity extends AppCompatActivity {
     }
 
     public void addTour(View view) {
-        String image = String.valueOf(imgTour.getResources());
+        BitmapDrawable bitmapDrawable = (BitmapDrawable) imgTour.getDrawable();
+        Bitmap bitmap = bitmapDrawable.getBitmap();
+        ByteArrayOutputStream byteArray = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArray);
+        byte[] imgTour = byteArray.toByteArray();
         String tenCongTy = edTenCongTy.getText().toString().trim();
         String moTa = edMoTa.getText().toString().trim();
         String giaTour = edGia.getText().toString().trim();
@@ -123,8 +129,8 @@ public class ThemTourActivity extends AppCompatActivity {
                     .show();
 
         } else {
-            Tour tour = new Tour(tenCongTy, moTa, Integer.parseInt(giaTour),image,thoiGian);
-            db.InsertElement(tour);
+           Tour tour = new Tour(tenCongTy, moTa, Integer.parseInt(giaTour),imgTour,thoiGian);
+            db.InsertElementTour(tour);
             Toast.makeText(this, "Thêm tour thành công!!!", Toast.LENGTH_SHORT).show();
             finish();
         }

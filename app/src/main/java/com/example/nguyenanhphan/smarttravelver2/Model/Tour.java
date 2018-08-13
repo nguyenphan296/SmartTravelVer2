@@ -18,14 +18,14 @@ public class Tour implements Serializable {
     private String tenCongTy;
     private String diemDen;
     private int gia;
-    private String image;
+    private byte[] image;
     private int maDiaDiem;
     private String thoiGian;
 
     public Tour() {
     }
 
-    public Tour(int maTour, String tenCongTy, String diemDen, int gia, String image, int maDiaDiem, String thoiGian) {
+    public Tour(int maTour, String tenCongTy, String diemDen, int gia, byte[] image, int maDiaDiem, String thoiGian) {
         this.maTour = maTour;
         this.tenCongTy = tenCongTy;
         this.diemDen = diemDen;
@@ -35,7 +35,7 @@ public class Tour implements Serializable {
         this.thoiGian = thoiGian;
     }
 
-    public Tour(String tenCongTy, String diemDen, int gia, String image, String thoiGian) {
+    public Tour(String tenCongTy, String diemDen, int gia, byte[] image, String thoiGian) {
         this.tenCongTy = tenCongTy;
         this.diemDen = diemDen;
         this.gia = gia;
@@ -83,11 +83,11 @@ public class Tour implements Serializable {
         this.gia = gia;
     }
 
-    public String getImage() {
+    public byte[] getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
 

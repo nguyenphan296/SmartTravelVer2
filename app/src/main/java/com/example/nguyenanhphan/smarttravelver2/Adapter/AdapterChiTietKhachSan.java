@@ -1,6 +1,8 @@
 package com.example.nguyenanhphan.smarttravelver2.Adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -57,11 +59,14 @@ public class AdapterChiTietKhachSan extends BaseAdapter {
         TextView tvSoPhongTrong = view.findViewById(R.id.txtSoPhongTrong);
         TextView tvGiaPhong = view.findViewById(R.id.txtGiaPhong);
 
-        img.setImageResource(Integer.parseInt(khachSanList.get(position).getImageKs()));
+        byte[] avatar = khachSanList.get(position).getImageKs();
+        Bitmap bitmap = BitmapFactory.decodeByteArray(avatar,0,avatar.length);
+
+        img.setImageBitmap(bitmap);
         tvDiaChi.setText(khachSanList.get(position).getDiaChi());
         tvSoDienThoai.setText(khachSanList.get(position).getHotline());
         tvSoPhongTrong.setText(khachSanList.get(position).getSoPhongTrong());
-        tvGiaPhong.setText(khachSanList.get(position).getGiaPhong());
+//        tvGiaPhong.setText(khachSanList.get(position).getGiaPhong());
         return view;
     }
 }
