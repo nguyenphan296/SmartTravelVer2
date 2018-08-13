@@ -21,14 +21,14 @@ import static com.example.nguyenanhphan.smarttravelver2.SQLite.CreateDBUsers.COL
 import static com.example.nguyenanhphan.smarttravelver2.SQLite.CreateDBUsers.COLUMN_UserPhone;
 import static com.example.nguyenanhphan.smarttravelver2.SQLite.CreateDBUsers.COLUMN_UserPhoto;
 
-public class UserDAONew {
+public class UserDAO {
     SQLiteDatabase database;
     CreateDBUsers createDBUsers;
     String[] columnUser = {CreateDBUsers.COLUMN_UserID, CreateDBUsers.COLUMN_UserPhoto, CreateDBUsers.COLUMN_UserName,
             CreateDBUsers.COLUMN_UserPassword, CreateDBUsers.COLUMN_UserFullName, CreateDBUsers.COLUMN_UserAddress,
             CreateDBUsers.COLUMN_UserEmail, CreateDBUsers.COLUMN_UserPhone};
 
-    public UserDAONew(Context context) {
+    public UserDAO(Context context) {
         createDBUsers = new CreateDBUsers(context);
     }
 
@@ -44,13 +44,13 @@ public class UserDAONew {
         open();
         ContentValues contentValues = new ContentValues();
 
-        contentValues.put(COLUMN_UserPhoto, user.getmUsername());
+        contentValues.put(COLUMN_UserPhoto, user.getmPhone());
         contentValues.put(COLUMN_UserName, user.getmUsername());
-        contentValues.put(COLUMN_UserPassword, user.getmUsername());
-        contentValues.put(COLUMN_UserAddress, user.getmUsername());
-        contentValues.put(COLUMN_UserFullName, user.getmUsername());
-        contentValues.put(COLUMN_UserEmail, user.getmUsername());
-        contentValues.put(COLUMN_UserPhone, user.getmUsername());
+        contentValues.put(COLUMN_UserPassword, user.getmPassword());
+        contentValues.put(COLUMN_UserAddress, user.getmAddress());
+        contentValues.put(COLUMN_UserFullName, user.getmFullname());
+        contentValues.put(COLUMN_UserEmail, user.getmEmail());
+        contentValues.put(COLUMN_UserPhone, user.getmPhone());
         long id_user = database.insert(CreateDBUsers.TABLE_NAME, null, contentValues);
 
         if (id_user != 0) {
