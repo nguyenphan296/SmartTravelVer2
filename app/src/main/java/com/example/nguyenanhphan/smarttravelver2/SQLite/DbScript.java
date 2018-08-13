@@ -51,8 +51,32 @@ public class DbScript {
                 + COLUMN_PlaceLongtitude + " TEXT,"
                 + COLUMN_PlaceLatitude + " TEXT"
                 + ")";
-        // creating required tables
+        // create table khách sạn
+        String TABLE_KHACHSAN="CREATE TABLE "+ KhachSans + "("
+                + COLUMN_KhachSanID + " INTEGER PRIMARY KEY,"
+                + COLUMN_KhachSanName + " TEXT,"
+                + COLUMN_KhachSanGiaPhong + "INTEGER,"
+                + COLUMN_KhachSanDiaChi + "TEXT,"
+                + COLUMN_KhachSanHotline +"TEXT,"
+                + COLUMN_KhachSanLongtitude + "TEXT,"
+                + COLUMN_KhachSanLatitude + "TEXT,"
+                + COLUMN_KhachSanImage + "TEXT,"
+                + COLUMN_KhachSanSoPhongTrong + "INTEGER,"
+                + COLUMN_KhachSanMaDiaDiem + "INTEGER"
+                + ")";
+        String TABLE_TOUR="CREATE TABLE "+ Tours + "("
+                + COLUMN_TourID + " INTEGER PRIMARY KEY,"
+                + COLUMN_TourTenCongTy + " TEXT,"
+                + COLUMN_TourMoTa + "TEXT,"
+                + COLUMN_TourThoiGian + "TEXT,"
+                + COLUMN_TourGia + "INTEGER,"
+                + COLUMN_TourImage +"TEXT,"
+                + COLUMN_TourMaDiaDiem + "INTEGER"
+                + ")";
+
+        db.execSQL(TABLE_TOUR);
         db.execSQL(TABLE_PLACE);
+        db.execSQL(TABLE_KHACHSAN);
     }
 
     public static void CreateTableTour(SQLiteDatabase db){

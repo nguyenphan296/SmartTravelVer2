@@ -33,7 +33,6 @@ public class ThemKhachSanActivity extends AppCompatActivity {
     KhachSan_Model db;
     DataBaseHandler mdb;
 
-
     int REQUEST_CODE_FOLDER = 123;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -151,7 +150,9 @@ public class ThemKhachSanActivity extends AppCompatActivity {
                     .setNegativeButton("Ok", null)
                     .show();
         } else {
-            KhachSan khachSan = new KhachSan(tenKhachSan, Integer.parseInt(khoangGia), diaChi,Integer.parseInt(soDienThoai),longTiTude,laTiTude,image,Integer.parseInt(soPhongTrong));
+            KhachSan khachSan = new KhachSan(tenKhachSan, Integer.parseInt(khoangGia),
+                    diaChi,Integer.parseInt(soDienThoai),longTiTude,laTiTude,image,
+                    Integer.parseInt(soPhongTrong));
             db.InsertElementKhachSan(khachSan);
             Toast.makeText(this, "Thêm khách sạn thành công!!!", Toast.LENGTH_SHORT).show();
             finish();
