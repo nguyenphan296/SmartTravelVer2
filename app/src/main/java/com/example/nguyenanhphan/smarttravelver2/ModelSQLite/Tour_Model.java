@@ -63,13 +63,12 @@ public class Tour_Model {
         if (cursor.moveToFirst()) {
             do {
                 objTour.setMaTour((cursor.getInt(0)));
-                objTour.setTenCongTy(cursor.getColumnName(1));
-                objTour.setDiemDen(cursor.getColumnName(2));
-                objTour.setThoiGian(cursor.getColumnName(3));
-                objTour.setGia((cursor.getInt(4)));
+                objTour.setTenCongTy(cursor.getString(1));
+                objTour.setDiemDen(cursor.getString(2));
+                objTour.setThoiGian(cursor.getString(3));
+                objTour.setGia(cursor.getInt(4));
                 objTour.setImage(cursor.getBlob(5));
-                objTour.setMaDiaDiem(Integer.parseInt(cursor.getColumnName(6)));
-
+                objTour.setMaDiaDiem((cursor.getInt(6)));
                 listTourDetail.add(objTour);
             } while (cursor.moveToNext());
         }

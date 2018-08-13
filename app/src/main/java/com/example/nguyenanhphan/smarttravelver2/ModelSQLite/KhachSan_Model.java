@@ -56,7 +56,7 @@ public class KhachSan_Model {
         Cursor cursor = db.rawQuery(query, null);
         if (cursor.moveToFirst()) {
             do {
-                //objKhachSan.setMaKhachSan((cursor.getInt(0)));
+//                objKhachSan.setMaKhachSan((cursor.getInt(0)));
                 objKhachSan.setTenKhachSan(cursor.getString(1));
                 objKhachSan.setGiaPhong((cursor.getInt(2)));
                 objKhachSan.setDiaChi(cursor.getString(3));

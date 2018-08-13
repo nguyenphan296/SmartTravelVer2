@@ -36,7 +36,7 @@ public class DbScript {
     public static final String COLUMN_KhachSanHotline = "HotLine";
     public static final String COLUMN_KhachSanLongtitude = "Longtitude";
     public static final String COLUMN_KhachSanLatitude = "Latitude";
-    public static final String COLUMN_KhachSanImage = "Gia";
+    public static final String COLUMN_KhachSanImage = "KhachSanImage";
     public static final String COLUMN_KhachSanSoPhongTrong = "SoPhongTrong";
     public static final String COLUMN_KhachSanMaDiaDiem = "MaDiaDiem";
 
@@ -57,7 +57,7 @@ public class DbScript {
 
     public static void CreateTableTour(SQLiteDatabase db){
         String TABLE_TOUR="CREATE TABLE "+ Tours + "("
-                + COLUMN_TourID + " INTEGER PRIMARY KEY,"
+                + COLUMN_TourID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + COLUMN_TourTenCongTy + " TEXT,"
                 + COLUMN_TourMoTa + " TEXT,"
                 + COLUMN_TourThoiGian + " TEXT,"
@@ -71,9 +71,9 @@ public class DbScript {
 
     public static void CreateTableKhachSan(SQLiteDatabase db){
         String TABLE_KHACHSAN="CREATE TABLE "+ KhachSans + "("
-                + COLUMN_KhachSanID + " INTEGER PRIMARY KEY,"
+                + COLUMN_KhachSanID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + COLUMN_KhachSanName + " TEXT,"
-                + COLUMN_KhachSanGiaPhong + "INTEGER,"
+                + COLUMN_KhachSanGiaPhong + " INTEGER,"
                 + COLUMN_KhachSanDiaChi + " TEXT,"
                 + COLUMN_KhachSanHotline +" TEXT,"
                 + COLUMN_KhachSanLongtitude + " TEXT,"
@@ -98,13 +98,13 @@ public class DbScript {
         db.execSQL("DROP TABLE IF EXISTS " + Tours);
 
         // create new tables
-        CreateTable(db);
+        CreateTableTour(db);
     }
     public static void UpdateTableKhachSan(SQLiteDatabase db) {
         // on upgrade drop older tables
         db.execSQL("DROP TABLE IF EXISTS " + KhachSans);
 
         // create new tables
-        CreateTable(db);
+        CreateTableKhachSan(db);
     }
 }

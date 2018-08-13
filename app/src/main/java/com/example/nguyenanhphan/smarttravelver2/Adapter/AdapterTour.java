@@ -60,6 +60,7 @@ public class AdapterTour extends BaseAdapter {
         byte[] avatar = tourList.get(position).getImage();
         Bitmap bitmap = BitmapFactory.decodeByteArray(avatar,0,avatar.length);
         img.setImageBitmap(bitmap);
+
         tvTenCongTy.setText(tourList.get(position).getTenCongTy());
         tvDiemDen.setText(tourList.get(position).getDiemDen());
         tvGiaTour.setText(tourList.get(position).getGia()+"");

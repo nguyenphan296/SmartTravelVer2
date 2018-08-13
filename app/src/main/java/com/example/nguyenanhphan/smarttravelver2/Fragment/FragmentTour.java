@@ -75,4 +75,12 @@ public class FragmentTour extends android.support.v4.app.Fragment {
         init();
 
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        tourList = tour_model.getAllElements();
+        adapterTour = new AdapterTour(getActivity(),tourList);
+        listView.setAdapter(adapterTour);
+    }
 }

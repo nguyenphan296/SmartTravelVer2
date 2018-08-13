@@ -47,6 +47,7 @@ public class ThemTourActivity extends AppCompatActivity {
         edTenCongTy=findViewById(R.id.edTenCongTyCungCap);
         edMoTa=findViewById(R.id.edMoTaTour);
         edGia = findViewById(R.id.edGiaTour);
+        edThoiGian=findViewById(R.id.edThoiGianTour);
         btnTaiAnhTour=findViewById(R.id.btnTaiAnhTour);
         btnThemTour=findViewById(R.id.btnThemTour2);
         imgTour=findViewById(R.id.img_tour);
