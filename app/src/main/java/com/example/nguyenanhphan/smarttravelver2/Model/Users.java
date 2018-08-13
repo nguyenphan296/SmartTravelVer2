@@ -3,14 +3,14 @@ package com.example.nguyenanhphan.smarttravelver2.Model;
 import java.io.Serializable;
 
 public class Users implements Serializable {
-     int _id;
-     String mPhoto;
+    int _id;
+    String mPhoto;
     String mUsername;
-     String mPassword;
+    String mPassword;
     String mFullname;
     String mAddress;
- String mEmail;
- String mPhone;
+    String mEmail;
+    String mPhone;
 
     public Users() {
     }
