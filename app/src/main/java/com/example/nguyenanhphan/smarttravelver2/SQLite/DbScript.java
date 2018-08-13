@@ -62,7 +62,7 @@ public class DbScript {
                 + COLUMN_TourMoTa + " TEXT,"
                 + COLUMN_TourThoiGian + " TEXT,"
                 + COLUMN_TourGia + " INTEGER,"
-                + COLUMN_TourImage +" TEXT,"
+                + COLUMN_TourImage +" BLOB,"
                 + COLUMN_TourMaDiaDiem + " INTEGER"
                 + ")";
 
@@ -78,7 +78,7 @@ public class DbScript {
                 + COLUMN_KhachSanHotline +" TEXT,"
                 + COLUMN_KhachSanLongtitude + " TEXT,"
                 + COLUMN_KhachSanLatitude + " TEXT,"
-                + COLUMN_KhachSanImage + " TEXT,"
+                + COLUMN_KhachSanImage + " BLOB,"
                 + COLUMN_KhachSanSoPhongTrong + " INTEGER,"
                 + COLUMN_KhachSanMaDiaDiem + " INTEGER"
                 + ")";
