@@ -85,11 +85,5 @@ public class FragmentKhachSan extends Fragment {
         });
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        khachSanList = khachSanModel.getAllElements();
-        adapterKhachSan = new AdapterKhachSan(getActivity(),khachSanList);
-        listView.setAdapter(adapterKhachSan);
-    }
+
 }
